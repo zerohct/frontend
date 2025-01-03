@@ -1,12 +1,13 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
+const HutechLogo = "/assets/images/logo/logo.png";
 const AdminSidebar = () => {
   const location = useLocation();
 
   const menuItems = [
     {
-      to: "/dashboard",
+      to: "/admin",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +26,7 @@ const AdminSidebar = () => {
       label: "Dashboard",
     },
     {
-      to: "/event",
+      to: "/admin/events",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -134,15 +135,15 @@ const AdminSidebar = () => {
   ];
 
   return (
-    <div className="h-screen w-64 bg-[#2D323E] flex flex-col">
+    <div className="fixed top-0 left-0 h-screen w-64 bg-[#2D323E] flex flex-col">
       {/* Header */}
       <div className="p-4">
         <div className="text-center">
           <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-2">
             <img
-              src="/hutech-logo.png"
-              alt="HUTECH EVENT"
-              className="w-8 h-8"
+              src={HutechLogo}
+              alt="Hutech Logo"
+              className="h-14 w-auto object-contain"
             />
           </div>
           <div className="text-white font-semibold">HUTECH EVENT</div>
@@ -150,7 +151,7 @@ const AdminSidebar = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 mt-4">
+      <nav className="flex-1 mt-4 overflow-y-auto">
         {menuItems.map((item) => (
           <Link
             key={item.label}
@@ -162,7 +163,7 @@ const AdminSidebar = () => {
               group
             `}
           >
-            {/* Hover/Active Background Effect */}
+            {/* Same hover/active effects as before */}
             <div
               className={`
                 absolute inset-0 bg-[#4CB8FF] opacity-0
@@ -171,7 +172,6 @@ const AdminSidebar = () => {
               `}
             />
 
-            {/* Left Border Indicator */}
             <div
               className={`
                 absolute left-0 top-0 bottom-0 w-1 bg-[#4CB8FF]
@@ -192,7 +192,7 @@ const AdminSidebar = () => {
       <div className="p-4">
         <button
           className="
-            w-full flex items-center justify-center px-4 py-2 
+            w-full flex items-center justify-center px-4 py-2
             text-sm text-gray-300 rounded-md
             border border-gray-600
             transition-all duration-300 ease-in-out

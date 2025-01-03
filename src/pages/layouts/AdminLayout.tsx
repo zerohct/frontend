@@ -8,11 +8,9 @@ const AdminLayout: React.FC = () => {
       {/* Sidebar */}
       <AdminSidebar />
 
-      {/* Nội dung chính */}
-      <div className="flex-1 p-6 ml-72 bg-gray-100 transition-all">
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <Outlet /> {/* Render các nested routes tại đây */}
-        </div>
+      {/* Main content */}
+      <div className="flex-1 ml-64">
+        <Outlet />
       </div>
     </div>
   );

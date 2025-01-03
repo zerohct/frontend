@@ -63,7 +63,9 @@ const ContactForm = () => {
 
         {/* Right side - Contact Info */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-6 rounded-lg text-white">
-          <h2 className="text-lg font-medium mb-6">Thông tin liên hệ</h2>
+          <h2 className="text-lg font-medium mb-6 text-center">
+            Thông tin liên hệ
+          </h2>
 
           <div className="space-y-5">
             <div className="flex items-start gap-3">

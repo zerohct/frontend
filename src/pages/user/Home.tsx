@@ -1,21 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "components/common/Header";
 import Footer from "components/common/Footer";
-import EventList from "components/event/client/EventListClient";
-import BannerUser from "components/common/BannerUser";
-import { isAuthenticated } from "api/authApi";
+import Banner from "components/common/BannerUser";
+import EventList from "components/List/EventList";
+import CompanyList from "components/List/CompanyList";
 
 const Home = () => {
-  useEffect(() => {
-    if (!isAuthenticated()) {
-      window.location.href = "/login";
-    }
-  }, []);
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <BannerUser />
+      <Banner />
       <EventList />
+      <CompanyList />
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { UserCircle, LogOut, User, ChevronDown, ChevronUp } from "lucide-react";
 
-import { logoutApi, getUserInfo, isAuthenticated } from "../../api/authApi";
+// import { logoutApi, getUserInfo, isAuthenticated } from "../../api/authApi";
 
 const HutechLogo = ["/assets/images/logo/logo.png"];
 
@@ -10,21 +10,21 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
 
-  useEffect(() => {
-    const userInfo = getUserInfo();
-    if (isAuthenticated() && userInfo) {
-      setIsLoggedIn(true);
-      setUsername(userInfo.nickname || userInfo.username || "User");
-    } else {
-      setIsLoggedIn(false);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const userInfo = getUserInfo();
+  //   if (isAuthenticated() && userInfo) {
+  //     setIsLoggedIn(true);
+  //     setUsername(userInfo.nickname || userInfo.username || "User");
+  //   } else {
+  //     setIsLoggedIn(false);
+  //   }
+  // }, []);
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
-  const handleLogout = () => {
-    logoutApi(); // Use the logout function from authApi
-  };
+  // const handleLogout = () => {
+  //   logoutApi(); // Use the logout function from authApi
+  // };
 
   return (
     <header className="bg-gray-300 shadow-lg sticky top-0 z-50">
@@ -97,13 +97,13 @@ const Header = () => {
                       <User size={16} className="mr-3" />
                       Admin page
                     </a>
-                    <button
+                    {/* <button
                       onClick={handleLogout}
                       className="w-full flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors duration-200 text-left"
                     >
                       <LogOut size={16} className="mr-3" />
                       Logout
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               )}

@@ -1,31 +1,36 @@
+// types/eventTypes.ts
+
+export enum EventStatus {
+  SắpDiễnRa = "SắpDiễnRa",
+  ĐangDiễnRa = "ĐangDiễnRa",
+  ĐãKếtThúc = "ĐãKếtThúc",
+  ĐãHủy = "ĐãHủy",
+}
+
 export interface Event {
-  id?: string;
+  eventId: number;
   title: string;
   description: string;
-  content: string;
-  start_time: string;
-  end_time: string;
-  site: string;
-  max_participants: number;
-  event_type_id: string;
-  semester_id: string;
-  academic_year_id: string;
-  image: string;
-  is_online: boolean;
-  registration_deadline: string;
-  status: number;
-}
-export interface EventType {
-  id: string;
-  name: string;
+  eventType: string;
+  startDate: string;
+  endDate: string;
+  registrationDeadline: string;
+  location: string;
+  maxParticipants: number;
+  currentParticipants: number;
+  status: EventStatus;
+  createdBy: string;
+  image: string | null;
 }
 
-export interface Semester {
-  id: string;
-  name: string;
-}
-
-export interface AcademicYear {
-  id: string;
-  name: string;
+export interface EventRequest {
+  title: string;
+  description: string;
+  typeId: number;
+  startDate: string;
+  endDate: string;
+  registrationDeadline: string;
+  location: string;
+  maxParticipants: number;
+  image?: File;
 }
